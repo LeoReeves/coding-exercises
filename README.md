@@ -1,5 +1,5 @@
 # Coding Exercises
-My solutions to various coding exercises and challenges.
+My solutions to various coding exercises, challenges and problems.
 
 Languages used:
 
