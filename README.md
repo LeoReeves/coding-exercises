@@ -1,4 +1,4 @@
-# Coding Exercises
+# Coding Solutions
 My solutions to various coding exercises, challenges and problems.
 
 Languages used:
