@@ -1,2 +1,2 @@
-# coding-exercises
-My solutions to various coding exercises.
+# Coding Exercises
+My solutions to various coding exercises and challenges I find online.
