@@ -6,7 +6,7 @@ Languages used:
 - JavaScript
 - Python
 
-Exercise Sources:
+Exercise sources:
 
 - [CodingBat](http://codingbat.com)
 - [Free Code Camp](https://www.freecodecamp.com)
