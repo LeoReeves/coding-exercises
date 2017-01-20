@@ -5,3 +5,8 @@ Languages used:
 
 - JavaScript
 - Python
+
+Exercise Sources:
+
+- [codingbat][http://codingbat.com]
+- [Free Code Camp][https://www.freecodecamp.com]
