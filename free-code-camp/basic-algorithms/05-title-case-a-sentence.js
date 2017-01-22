@@ -1,24 +1,23 @@
-// Returns a provided string with the first letter of each word capitalized. 
+// Title Case a Sentence
 
 // Solution 1
 function titleCase(str) {
-	str = str.toLowerCase().split(' ');
-	results = [];
-	for (var i = 0; i < str.length; i++) {
-		var letter = str[i].charAt(0).toUpperCase();
-		results.push(letter + str[i].slice(1));
-	}
-	return results.join(' ');
+  const strArr = str.toLowerCase().split(' ');
+  const results = [];
+  for (let i = 0; i < strArr.length; i += 1) {
+    const letter = strArr[i].charAt(0).toUpperCase();
+    results.push(letter + str[i].slice(1));
+  }
+  return results.join(' ');
 }
+
+titleCase('sHoRt AnD sToUt'); // → 'Short and Stout'
+
 
 // Solution 2 based on this http://stackoverflow.com/a/4879879
-function titleCase(str) {
-  str = str.toLowerCase();
-  return str.replace(/(^| )(\w)/g, function(firstChar) {
-    return firstChar.toUpperCase();
-  });
+function titleCase2(str) {
+  return str.toLowerCase().replace(/(^| )(\w)/g, firstChar => firstChar.toUpperCase());
 }
 
-titleCase("sHoRt AnD sToUt");
+titleCase2('sHoRt AnD sToUt'); // → 'Short and Stout'
 
-// Result = 'Short and Stout' 

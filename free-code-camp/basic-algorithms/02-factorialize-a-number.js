@@ -1,13 +1,14 @@
-// Returns the factorial of the provided integer.
+/**
+ * Factorialize a Number
+ * Returns the factorial of the provided integer.
+ */
 
 function factorialize(num) {
-  var factor = 1;
-  for (var i = 1; i <= num; i++) {
+  let factor = 1;
+  for (let i = 1; i <= num; i += 1) {
     factor *= i;
   }
   return factor;
 }
 
-factorialize(5);
-
-// Result = 120
+factorialize(5); // → 120

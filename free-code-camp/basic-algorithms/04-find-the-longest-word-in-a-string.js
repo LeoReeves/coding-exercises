@@ -1,12 +1,9 @@
-// Returns the length of the longest word in a string.
+// Find the Longest Word in a String
 
 function findLongestWord(str) {
-	str = str.split(' ');
-	var longest = str.sort(function(a, b) {
-		return b.length - a.length;
-	})[0];
-	return longest.length; // change to 'return longest;' to just return longest word. 
+  const strArr = str.split(' ');
+  const longest = strArr.sort((a, b) => b.length - a.length)[0];
+  return longest.length;
 }
-findLongestWord("The quick brown fox jumped over the lazy dog");
 
-// Result = 6
+findLongestWord('The quick brown fox jumped over the lazy dog'); // → 6

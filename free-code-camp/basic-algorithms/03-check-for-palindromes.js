@@ -1,10 +1,8 @@
-// Checks if a given string is a palindrome.
+// Check for Palindromes
 
 function palindrome(str) {
-  str = str.replace(/[^a-zA-Z0-9]/g,'').toLowerCase();
-  return str == str.split('').reverse().join('');
+  const lowerStr = str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+  return lowerStr === lowerStr.split('').reverse().join('');
 }
 
-palindrome("_Eye");
-
-// Result = true
+palindrome('_Eye'); // → true

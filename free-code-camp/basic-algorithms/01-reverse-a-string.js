@@ -1,9 +1,8 @@
-// Reverses a given string.
+// Reverse a String
 
+// Solution 1
 function reverseString(str) {
   return str.split('').reverse().join('');
 }
 
-reverseString("hello");
-
-// Result = "olleh"
+reverseString('hello'); // → 'olleh'
