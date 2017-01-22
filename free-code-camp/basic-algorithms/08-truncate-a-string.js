@@ -1,6 +1,6 @@
 /**
  * Truncate a string
- * Truncate a string (first argument) if it is longer than the given maximum string length
+ * Truncate the first argument if it is longer than the given maximum string length
  * second argument), return the truncated string with a ... ending.
  */
 
