@@ -176,7 +176,7 @@ console.log(xyBalance('yaaxbb')); // → false
 
 /**
  * mixString
- * Given two strings, a and b, create a bigger string made of the first char of 
+ * Given two strings, a and b, create a bigger string made of the first char of
  * a, the first char of b, the second char of a, the second char of b, and so
  * on. Any leftover chars go at the end of the result.
  */
@@ -202,7 +202,7 @@ console.log(mixString('xxxx', 'There')); // → 'xTxhxexre'
  */
 
 function repeatEnd(str, n) {
-  return str.slice(str.length-n).repeat(n);
+  return str.slice(str.length - n).repeat(n);
 }
 
 console.log(repeatEnd('Hello', 3)); // → 'llollollo'
@@ -219,7 +219,7 @@ console.log(repeatEnd('Hello', 1)); // → 'o'
 
 function repeatFront(str, n) {
   let newStr = '';
-  for (i = n; i > 0; i -= 1) {
+  for (let i = n; i > 0; i -= 1) {
     newStr += str.slice(0, i);
   }
   return newStr;
@@ -235,7 +235,7 @@ console.log(repeatFront('Ice Cream', 2)); // → 'IcI'
  * count occurrences of the word, separated by the separator string.
  */
 
-function repeatSeparator(strWord, strSep, count){
+function repeatSeparator(strWord, strSep, count) {
   let newStr = '';
   for (let i = 0; i < count; i += 1) {
     newStr += strWord;
@@ -283,7 +283,7 @@ console.log(prefixAgain('abXYabc', 3)); // → false
  * middle, we'll say that the number of chars to the left and right of the 'xyz'
  * must differ by at most one. This problem is harder than it looks.
  */
- 
+
 function xyzMiddle(str) {
   const splitArr = str.split('xyz');
   return Math.abs(splitArr[0].length - splitArr[1].length) <= 1;
@@ -307,9 +307,9 @@ function getSandwich(str) {
   return '';
 }
 
-console.log(getSandwich("breadjambread")); // → "jam"
-console.log(getSandwich("xxbreadjambreadyy")); // → "jam"
-console.log(getSandwich("xxbreadyy")); // → ""
+console.log(getSandwich('breadjambread')); // → "jam"
+console.log(getSandwich('xxbreadjambreadyy')); // → "jam"
+console.log(getSandwich('xxbreadyy')); // → ""
 
 /**
  * sameStarChar
@@ -327,9 +327,9 @@ function sameStarChar(str) {
   return nonStarCount > 0;
 }
 
-console.log(sameStarChar("xy*yzz")); // → true
-console.log(sameStarChar("xy*zzz")); // → false
-console.log(sameStarChar("*xa*az")); // → true
+console.log(sameStarChar('xy*yzz')); // → true
+console.log(sameStarChar('xy*zzz')); // → false
+console.log(sameStarChar('*xa*az')); // → true
 
 /**
  * oneTwo
@@ -346,10 +346,10 @@ function oneTwo(str) {
   }
   return newStr;
 }
- 
-console.log(oneTwo("abc")); // → "bca"
-console.log(oneTwo("tca")); // → "cat"
-console.log(oneTwo("tcagdo")); // → "catdog"
+
+console.log(oneTwo('abc')); // → "bca"
+console.log(oneTwo('tca')); // → "cat"
+console.log(oneTwo('tcagdo')); // → "catdog"
 
 /**
  * zipZap
@@ -358,13 +358,13 @@ console.log(oneTwo("tcagdo")); // → "catdog"
  * middle letter is gone, so "zipXzap" yields "zpXzp".
  */
 
-function zipZap(str){
+function zipZap(str) {
   return str.replace(/z.p/g, 'zp');
 }
- 
-console.log(zipZap("zipXzap")); // → "zpXzp"
-console.log(zipZap("zopzop")); // → "zpzp"
-console.log(zipZap("zzzopzop")); // → "zzzpzp"
+
+console.log(zipZap('zipXzap')); // → "zpXzp"
+console.log(zipZap('zopzop')); // → "zpzp"
+console.log(zipZap('zzzopzop')); // → "zzzpzp"
 
 /**
  * starOut
@@ -377,6 +377,41 @@ function starOut(str) {
   return str.replace(/.\*+./g, '');
 }
 
-console.log(starOut("ab*cd")); // → "ad"
-console.log(starOut("ab**cd")); // → "ad"
-console.log(starOut("sm*eilly")); // → "silly"
+console.log(starOut('ab*cd')); // → "ad"
+console.log(starOut('ab**cd')); // → "ad"
+console.log(starOut('sm*eilly')); // → "silly"
+
+/**
+ * plusOut
+ * Given a string and a non-empty word string, return a version of the original
+ * String where all chars have been replaced by pluses ("+"), except for
+ * appearances of the word string which are preserved unchanged.
+ */
+
+function plusOut(str, word) {
+  return str.replace(new RegExp(`[^${word}]`, 'g'), '+');
+}
+
+console.log(plusOut('12xy34', 'xy')); // → "++xy++"
+console.log(plusOut('12xy34', '1')); // → "1+++++"
+console.log(plusOut('12xy34xyabcxy', 'xy')); // → "++xy++xy+++xy"
+
+/**
+ * wordEnds
+ * Given a string and a non-empty word string, return a string made of each
+ * char just before and just after every appearance of the word in the string.
+ * Ignore cases where there is no char before or after the word, and a char may
+ * be included twice if it is between two words.
+ */
+
+function wordEnds(str, word) {
+  const excludeExtraChars = new RegExp(`(^|.)${word}(.|$)`, 'g');
+  const excludeWord = new RegExp(`${word}`, 'g');
+  const newStr = str.match(excludeExtraChars, '').join('').replace(excludeWord, '');
+  const length = newStr.length;
+  return length > 1 ? newStr : newStr.repeat(length * 2);
+}
+
+console.log(wordEnds('abcXY123XYijk', 'XY')); // → "c13i"
+console.log(wordEnds('XY123XY', 'XY')); // → "13"
+console.log(wordEnds('XY1XY', 'XY')); // → "11"
