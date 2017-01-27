@@ -6,9 +6,9 @@
  * on the number of cigars. Return true if the party with the given values is
  * successful, or false otherwise.
  */
- 
+
 function cigarParty(cigars, isWeekend) {
-  return cigars >= 40 && cigars <= 60 || isWeekend && cigars >= 40;
+  return (cigars >= 40 && cigars <= 60) || (isWeekend && cigars >= 40);
 }
 
 console.log(cigarParty(30, false)); // → false
@@ -29,13 +29,12 @@ console.log(cigarParty(70, true)); // → true
 function dateFashion(you, date) {
   if (you <= 2 || date <= 2) {
     return 0;
-  }
-  else if (you > 8 || date > 8) {
+  } else if (you > 8 || date > 8) {
     return 2;
   }
   return 1;
 }
- 
+
 console.log(dateFashion(5, 10)); // → 2
 console.log(dateFashion(5, 2)); // → 0
 console.log(dateFashion(5, 5)); // → 1
@@ -48,10 +47,10 @@ console.log(dateFashion(5, 5)); // → 1
  * and a boolean isSummer, return true if the squirrels play and false
  * otherwise.
  */
- 
+
 function squirrelPlay(temp, isSummer) {
-  return temp >= 60 && temp <= 90 || isSummer && temp >= 60 && temp <= 100;
-} 
+  return (temp >= 60 && temp <= 90) || (isSummer && temp >= 60 && temp <= 100);
+}
 
 console.log(squirrelPlay(70, false)); // → true
 console.log(squirrelPlay(95, false)); // → false
@@ -72,7 +71,7 @@ function caughtSpeeding(speed, isBirthday) {
   if (speed <= 60) return 0;
   return speed >= 61 && speed <= 80 ? 1 : 2;
 }
- 
+
 console.log(caughtSpeeding(60, false)); // → 0
 console.log(caughtSpeeding(65, false)); // → 1
 console.log(caughtSpeeding(65, true)); // → 0
@@ -105,7 +104,7 @@ console.log(sortaSum(10, 11)); // → 21
 function alarmClock(day, vacation) {
   const weekday = day >= 1 && day <= 5;
   const weekend = day === 6 || day === 0;
-  if (vacation && weekday || !vacation && weekend) {
+  if ((vacation && weekday) || (!vacation && weekend)) {
     return '10:00';
   } else if (weekday) {
     return '7:00';
@@ -132,19 +131,19 @@ console.log(love6(4, 5)); // → false
 console.log(love6(1, 5)); // → true
 
 /**
- * in1To10 
+ * in1To10
  * Given a number n, return true if n is in the range 1..10, inclusive. Unless
  * "outsideMode" is true, in which case return true if the number is less or
  * equal to 1, or greater or equal to 10.
  */
- 
+
 function in1To10(n, outsideMode) {
   if (!outsideMode) {
     return n >= 1 && n <= 10;
   }
   return n <= 1 || n >= 10;
 }
- 
+
 console.log(in1To10(5, false)); // → true
 console.log(in1To10(11, false)); // → false
 console.log(in1To10(11, true)); // → true
@@ -231,7 +230,7 @@ console.log(nearTen(19)); // → true
 
 function teenSum(a, b) {
   return (a >= 13 && a <= 19) || (b >= 13 && b <= 19) ? 19 : a + b;
-} 
+}
 
 console.log(teenSum(3, 4)); // → 7
 console.log(teenSum(10, 13)); // → 19
@@ -254,7 +253,7 @@ function answerCell(isMorning, isMom, isAsleep) {
   }
   return true;
 }
- 
+
 console.log(answerCell(false, false, false)); // → true
 console.log(answerCell(false, false, true)); // → false
 console.log(answerCell(true, false, false)); // → false
@@ -310,10 +309,10 @@ function fizzString(str) {
   else if (letterB) return 'Buzz';
   return str;
 }
- 
-console.log(fizzString("fig")); // → "Fizz"
-console.log(fizzString("dib")); // → "Buzz"
-console.log(fizzString("fib")); // → "FizzBuzz"
+
+console.log(fizzString('fig')); // → "Fizz"
+console.log(fizzString('dib')); // → "Buzz"
+console.log(fizzString('fib')); // → "FizzBuzz"
 
 /**
  * fizzString2
@@ -357,7 +356,7 @@ console.log(twoAsOne(3, 2, 2)); // → false
 
 function inOrder(a, b, c, bOk) {
   return bOk ? c > b : b > a && c > b;
-} 
+}
 
 console.log(inOrder(1, 2, 4, false)); // → true
 console.log(inOrder(1, 2, 1, false)); // → false
@@ -409,11 +408,11 @@ console.log(lastDigit(23, 19, 3)); // → true
  * Given three ints, a b c, return true if one of them is 10 or more less than
  * one of the others.
  */
- 
+
 function lessBy10(a, b, c) {
   return Math.abs(Math.max(a, b, c) - Math.min(a, b, c)) >= 10;
 }
- 
+
 console.log(lessBy10(1, 11, 11)); // → true
 console.log(lessBy10(1, 7, 10)); // → false
 console.log(lessBy10(11, 1, 7)); // → true
@@ -430,7 +429,7 @@ function withoutDoubles(die1, die2, noDoubles) {
     if (die1 === 6) {
       return die2 + 1;
     } else if (die1 <= 5) {
-      return die1 + die2 + 1; 
+      return die1 + die2 + 1;
     }
   }
   return die1 + die2;
