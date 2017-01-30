@@ -502,3 +502,68 @@ function greenTicket(a, b, c) {
 console.log(greenTicket(1, 2, 3)); // → 0
 console.log(greenTicket(2, 2, 2)); // → 20
 console.log(greenTicket(1, 1, 2)); // → 10
+
+/**
+ * blueTicket
+ * You have a blue lottery ticket, with ints a, b, and c on it. This makes three
+ * pairs, which we'll call ab, bc, and ac. Consider the sum of the numbers in
+ * each pair. If any pair sums to exactly 10, the result is 10. Otherwise if the
+ * ab sum is exactly 10 more than either bc or ac sums, the result is 5.
+ * Otherwise the result is 0.
+ */
+
+function blueTicket(a, b, c) {
+  const ab = a + b;
+  const bc = b + c;
+  const ac = a + c;
+  if (ab === 10 || bc === 10 || ac === 10) {
+    return 10;
+  } else if (ab === bc + 10 || ab === ac + 10) {
+    return 5;
+  }
+  return 0;
+}
+
+console.log(blueTicket(9, 1, 0)); // → 10
+console.log(blueTicket(9, 2, 0)); // → 0
+console.log(blueTicket(6, 1, 4)); // → 10
+
+/**
+ * shareDigit
+ * Given two ints, each in the range 10..99, return true if there is a digit
+ * that appears in both numbers, such as the 2 in 12 and 23. (Note: division,
+ * e.g. n/10, gives the left digit while the % "mod" n%10 gives the right
+ * digit.)
+ */
+ 
+function shareDigit(a, b) {
+  const aLeft = Math.round(a / 10);
+  const aRight = a % 10;
+  const bLeft = Math.round(b / 10);
+  const bRight = b % 10;
+  return aLeft === bLeft || aLeft === bRight || aRight === bLeft || aRight === bRight;
+}
+
+console.log(shareDigit(12, 23)); // → true
+console.log(shareDigit(12, 43)); // → false
+console.log(shareDigit(12, 44)); // → false
+
+/**
+ * sumLimit
+ * Given 2 non-negative ints, a and b, return their sum, so long as the sum has
+ * the same number of digits as a. If the sum has more digits than a, just
+ * return a without b. (Note: one way to compute the number of digits of a
+ * non-negative int n is to convert it to a string with String.valueOf(n) and
+ * then check the length of the string.)
+ */
+ 
+function sumLimit(a, b) {
+  if (String(a + b).length === String(a).length) {
+    return a + b;
+  }
+  return a;
+}
+ 
+console.log(sumLimit(2, 3)); // → 5
+console.log(sumLimit(8, 3)); // → 8
+console.log(sumLimit(8, 1)); // → 9
