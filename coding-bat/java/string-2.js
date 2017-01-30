@@ -65,11 +65,6 @@ function countCode(str) {
   return codeMatch ? codeMatch.length : 0;
 }
 
-function countCode(str) {
-  const codeMatch = str.match(/co.e/g);
-  return codeMatch ? codeMatch.length : 0;
-}
-
 console.log(countCode('aaacodebbb')); // → 1
 console.log(countCode('codexxcode')); // → 2
 console.log(countCode('cozexxcope')); // → 2
