@@ -100,5 +100,3 @@ function countChar(str, character) {
 
 console.log(countChar("kakkerlak", "k"));
 // → 4
-
-
