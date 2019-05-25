@@ -9,4 +9,5 @@ Languages used:
 Exercise sources:
 
 - [CodingBat](http://codingbat.com)
-- [Free Code Camp](https://www.freecodecamp.com)
+- [Eloquent JavaScript](https://eloquentjavascript.net/code/)
+- [freeCodeCamp](https://www.freecodecamp.com)
