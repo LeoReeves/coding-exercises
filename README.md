@@ -9,5 +9,6 @@ Languages used:
 Exercise sources:
 
 - [CodingBat](http://codingbat.com)
+- [CodingJS](https://the-winter.github.io/codingjs)
 - [Eloquent JavaScript](https://eloquentjavascript.net/code/)
 - [freeCodeCamp](https://www.freecodecamp.com)
